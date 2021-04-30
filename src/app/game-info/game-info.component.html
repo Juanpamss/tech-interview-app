@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row" style="margin-top: 20px">
+    <div class="col-md-12 text-center">
+      <button class="btn btn-primary" (click)="changePlayers()">Change Players</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <br>
+      <label style="font-weight: bold">Player's Turn</label>
+      <br>
+      <label>{{playerToMove}}</label>
+    </div>
+    <div class="col-md-6 text-center">
+      <label style="font-weight: bold">Score</label>
+      <br>
+      <div>
+        <table class="table table-striped" style="width: 250px; margin-right: auto; margin-left: auto">
+          <thead>
+          <tr>
+            <th colspan="2">{{players.playerOne}} &nbsp;&nbsp;&nbsp;&nbsp;
+              vs
+              &nbsp;&nbsp;&nbsp;&nbsp;{{players.playerTwo}}</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>{{headToHeadResults.scorePlayerOne !== null ? headToHeadResults.scorePlayerOne : 0}}</td>
+            <td>{{headToHeadResults.scorePlayerTwo !== null ? headToHeadResults.scorePlayerTwo : 0}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="winner !== ''" class="row">
+    <label style="font-weight: bold">{{winner !== 'DRAW' ? winner + ' wins!' : winner + ' !'}}</label>
+  </div>
+</div>

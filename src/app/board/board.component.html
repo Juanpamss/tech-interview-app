@@ -1,0 +1,20 @@
+<div class="container" style="margin-top: 30px">
+  <div class="row">
+    <div class="col-md-12" style="align-content: flex-end">
+      <div class="box-container">
+        <main>
+          <button class="box" *ngFor="let token of board; let index = index" (click)="playerMove(index)" [disabled]="winner !== ''">
+            {{token}}
+          </button>
+        </main>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div *ngIf="winner !== ''" class="row" style="margin-top: 30px">
+    <div class="col-md-12">
+      <button class="btn btn-primary" (click)="newGame()">New Game</button>
+    </div>
+  </div>
+</div>

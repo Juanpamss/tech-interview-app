@@ -1,0 +1,22 @@
+.box{
+  border: 1px gray solid;
+  height: 100px;
+  width: 100px;
+}
+
+main{
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-gap: 0px;
+}
+
+.box-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box-container div {
+  width: 100px;
+  height: 100px;
+}
