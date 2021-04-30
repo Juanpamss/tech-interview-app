@@ -46,9 +46,11 @@ const _boardReducer = createReducer(
   on(updateScore, (state, action) => {
     let newResults : any = []
     let updatedResults : any = []
+    //Check if the initialState coming from the localStorage has data, if not it is the first game ever
     if(state.results !== undefined && state.results.length > 0){
       updatedResults = state.results.map(
         (result : any) => {
+          //If the players have played against each other before, update the new results, if not add the new players to the records
           if(action.result.playerOne === result.playerOne || action.result.playerOne === result.playerTwo &&
             action.result.playerTwo === result.playerTwo || action.result.playerTwo === result.playerOne
           ){
@@ -65,6 +67,7 @@ const _boardReducer = createReducer(
       updatedResults = results
     }
 
+    //Merge the existing records with the new results and then store them
     let duplicatesRemoved = [...new Set([...updatedResults, ...newResults])];
 
     //Storage results in local storage

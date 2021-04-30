@@ -20,6 +20,7 @@ export class BoardComponent implements OnInit {
   // @ts-ignore
   headToHeadResults: Result
 
+  //Possible winning lines to check every time a player makes a move
   winLines = [
     [[1, 2], [4, 8], [3, 6]],
     [[0, 2], [4, 7]],
